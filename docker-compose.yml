@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb+srv://chaudharygeetanshu719:Geet719@cluster0.mkesu8l.mongodb.net/KnowledgeHub
+      - JWT_SECRET=chaudharygeetsnhu
+      - GEMINI_API_KEY=AIzaSyC6UfHWgQiTb6Y1SlH_aMhsIjc9ccPa4L0
+      - NODE_ENV=development
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
