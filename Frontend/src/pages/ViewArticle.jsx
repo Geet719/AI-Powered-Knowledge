@@ -9,7 +9,7 @@ const ViewArticle = () => {
   const [article, setArticle] = useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const user = JSON.parse(localStorage.getItem("user")); // 🧠 get role
+  const user = JSON.parse(localStorage.getItem("user")); 
 
   useEffect(() => {
     if (!token) return navigate("/login");

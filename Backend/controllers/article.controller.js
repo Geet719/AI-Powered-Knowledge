@@ -19,7 +19,7 @@ export const createArticle = async (req, res) => {
   }
 };
 
-// 
+ 
 export const getAllArticles = async (req, res) => {
   try {
     const articles = await Article.find().populate('createdBy', 'name email');
@@ -31,7 +31,7 @@ export const getAllArticles = async (req, res) => {
 
 
 export const getSingleArticle = async (req, res) => {
-  // console.log(`Fetching article with ID: ${req.params.id}`);
+  
   try {
     const article = await Article.findById(req.params.id).populate('createdBy', 'name email');
     if (!article) return res.status(404).json({ msg: 'Article not found' });
@@ -49,7 +49,7 @@ export const updateArticle = async (req, res) => {
 
     if (!article) return res.status(404).json({ msg: 'Article not found' });
 
-    // Check if current user is the creator
+   
     if (article.createdBy.toString() !== req.user.id) {
       return res.status(403).json({ msg: 'Not authorized to update this article' });
     }

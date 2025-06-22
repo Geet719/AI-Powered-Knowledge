@@ -4,7 +4,7 @@ import { promoteUserToAdmin, getAllUsers } from '../controllers/user.controller.
 
 const router = express.Router();
 
-// Admin-only
+
 router.put('/promote/:id', protect, isAdmin, promoteUserToAdmin);
 router.get('/all', protect, isAdmin, getAllUsers);
 

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model.js';
 
-// Verify JWT token
+
 export const protect = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith('Bearer ')) {
@@ -18,7 +18,7 @@ export const protect = async (req, res, next) => {
   }
 };
 
-// Check if user is admin
+
 export const isAdmin = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     return next();

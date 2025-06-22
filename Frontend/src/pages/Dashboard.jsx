@@ -44,7 +44,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* Articles Section */}
+      
       {articles.length === 0 ? (
         <p className="text-gray-600">No articles found.</p>
       ) : (
@@ -72,7 +72,7 @@ const Dashboard = () => {
         </div>
       )}
 
-      {/* Add Article Button */}
+    
       <div className="mt-8">
         <button
           onClick={() => navigate('/add')}
